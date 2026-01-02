@@ -5,6 +5,5 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="10.0.1" />
-    <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.0.1" />
   </ItemGroup>
 </Project>
