@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["config:recommended"],
+  extends: ["config:best-practices"],
   minimumReleaseAge: "14 days",
   hostRules: [
     {
