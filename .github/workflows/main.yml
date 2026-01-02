@@ -1,0 +1,27 @@
+name: Renovate
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # elk uur
+  workflow_dispatch:       # handmatig triggeren
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write           # branches pushen
+      pull-requests: write      # PR's openen/bijwerken
+      issues: write             # (optioneel) voor dashboard/issues
+      statuses: write           # status checks
+    steps:
+      - name: Checkout (optioneel)
+        uses: actions/checkout@v4
+
+      - name: Run Renovate
+        uses: renovatebot/github-action@v42.69.2
+        with:
+          configurationFile: .github/renovate-config.js # of .json/.json5; optioneel
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          LOG_LEVEL: info
+          RENOVATE_PLATFORM: github
